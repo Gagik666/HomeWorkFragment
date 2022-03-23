@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">FragmentHomeWorks</string>
+    <string name="fragment_home_works">Fragment home works</string>
+    <string name="first_task">First task</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_some_text">Enter some text</string>
+    <string name="go_to">Go To</string>
+    <string name="player_x">Player 1</string>
+    <string name="player_o">Player 2</string>
+    <string name="close">Close</string>
+    <string name="second_task">Second Task</string>
+
+    <style name="Styletv" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:paddingTop">25dp</item>
+        <item name="android:paddingBottom">25dp</item>
+    </style>
+
+    <style name="StyleBtn" parent="Widget.AppCompat.Button">
+        <item name="android:textSize">50sp</item>
+        <item name="backgroundTint">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">10dp</item>
+    </style>
+</resources>

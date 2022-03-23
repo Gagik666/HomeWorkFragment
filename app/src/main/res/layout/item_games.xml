@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="#FFF"
+    android:elevation="8dp"
+    app:cardCornerRadius="8dp"
+    app:strokeColor="#AEF6EBE4"
+    app:strokeWidth="3dp"
+    android:layout_margin="16dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp">
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flowContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:constraint_referenced_ids="img, floItem"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            tools:src="@drawable/tst"
+            app:layout_constraintStart_toStartOf="@id/flowContainer"
+            app:layout_constraintTop_toBottomOf="@id/flowContainer"
+            app:layout_constraintBottom_toBottomOf="@id/flowContainer"
+            app:layout_constraintEnd_toStartOf="@id/floItem"/>
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/floItem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            app:constraint_referenced_ids="tvGameName ,flowReult1, flowReult2 , btnStartGame"
+            app:layout_constraintStart_toEndOf="@id/img"
+            app:layout_constraintTop_toTopOf="@id/flowContainer"
+            app:layout_constraintEnd_toEndOf="@id/flowContainer"
+            app:layout_constraintBottom_toBottomOf="@id/flowContainer"/>
+
+        <TextView
+            android:id="@+id/tvGameName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="Game name"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:padding="5dp"
+            app:layout_constraintStart_toStartOf="@id/flowContainer"
+            app:layout_constraintEnd_toEndOf="@id/flowContainer"
+            app:layout_constraintTop_toTopOf="@id/flowContainer"
+            app:layout_constraintBottom_toTopOf="@id/flowReult1"/>
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flowReult1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            app:constraint_referenced_ids="tvPlayer1, tvResult1"
+            app:layout_constraintStart_toEndOf="@id/img"
+            app:layout_constraintTop_toBottomOf="@id/tvGameName"
+            app:layout_constraintEnd_toEndOf="@id/flowContainer" />
+
+        <TextView
+            android:id="@+id/tvPlayer1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="Name 1"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@id/flowReult1" />
+
+        <TextView
+            android:id="@+id/tvResult1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="Result 1"
+            android:textColor="#000"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/tvPlayer1"
+            app:layout_constraintEnd_toEndOf="@id/flowReult1"
+            app:layout_constraintBottom_toBottomOf="@id/flowReult1"/>
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flowReult2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            app:constraint_referenced_ids="tvPlayer2, tvResult2"
+            app:layout_constraintStart_toEndOf="@id/img"
+            app:layout_constraintTop_toBottomOf="@id/flowReult1"
+            app:layout_constraintEnd_toEndOf="@id/flowContainer"
+            app:layout_constraintBottom_toBottomOf="@id/flowContainer"/>
+        <TextView
+            android:id="@+id/tvPlayer2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="Name 1"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@id/flowReult2"
+            app:layout_constraintTop_toTopOf="@id/flowReult2"
+            app:layout_constraintBottom_toBottomOf="@id/flowReult2"
+            app:layout_constraintEnd_toStartOf="@id/tvResult2"/>
+
+        <TextView
+            android:id="@+id/tvResult2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="Result 1"
+            android:textColor="#000"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/tvPlayer2"
+            app:layout_constraintEnd_toEndOf="@id/flowReult2"
+            app:layout_constraintTop_toTopOf="@id/flowReult2"
+            app:layout_constraintBottom_toBottomOf="@id/flowReult2"/>
+
+        <Button
+            android:id="@+id/btnStartGame"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            android:textStyle="bold"
+            android:autoSizeTextType="uniform"
+            app:layout_constraintStart_toStartOf="@id/floItem"
+            app:layout_constraintTop_toBottomOf="@id/flowReult2"
+            app:layout_constraintEnd_toEndOf="@id/floItem"
+            app:layout_constraintBottom_toBottomOf="@id/floItem"/>
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
