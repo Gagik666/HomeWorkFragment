@@ -2,6 +2,7 @@ package com.example.fragmenthomeworks.Fragments
 
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.view.ContextMenu
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,7 @@ import com.example.fragmenthomeworks.Task2.GamelLists
 import kotlin.random.Random
 
 class DiceFragment : Fragment() {
+
 
 
     override fun onCreateView(
@@ -67,13 +69,15 @@ class DiceFragment : Fragment() {
             }.start()
 
         }
-
         btnExit.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putInt("tst", 5)
+            val fragment = MainFragment()
+            fragment.arguments = bundle
+            val backStateNmae1 = fragment.javaClass.name
+            fragmentManager?.beginTransaction()?.replace(R.id.ftSecondTaskContainer, fragment)?.addToBackStack(backStateNmae1)?.commit()
 
-            fragmentManager?.beginTransaction()?.add(R.id.ftSecondTaskContainer, MainFragment())?.commit()
         }
-
-
 
         return view
     }

@@ -11,6 +11,7 @@
     <string name="second_task">Second Task</string>
     <string name="suffle">suffle</string>
     <string name="d_i_c_e">D I C E</string>
+    <string name="tc_tac_toe">TC TAC TOE</string>
     <string name="exit">EXIT</string>
 
     <style name="Styletv" parent="Widget.AppCompat.TextView">

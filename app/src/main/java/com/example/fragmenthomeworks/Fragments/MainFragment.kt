@@ -31,7 +31,6 @@ class MainFragment : Fragment() {
 
         GamelLists.userList.add(UserModel(player1, player2, result11, result12))
         GamelLists.userList.add(UserModel(player1, player2, result21, result22))
-
         rvGames.layoutManager = LinearLayoutManager(this.context)
         adapter = GamesAdapter(GamelLists.userList, GamelLists.gameList) {
             if (it == 0) {
@@ -41,7 +40,7 @@ class MainFragment : Fragment() {
                 val fragment1 = TicTacToeFragment()
                 fragment1.arguments = bundle
                 val backStateNmae = fragment1.javaClass.name
-                fragmentManager?.beginTransaction()?.replace(R.id.ftSecondTaskContainer, fragment1 )?.addToBackStack(backStateNmae)?.commit()
+                fragmentManager?.beginTransaction()?.add(R.id.ftSecondTaskContainer, fragment1 )?.addToBackStack(backStateNmae)?.commit()
             }
             if (it == 1) {
                 val bundle = Bundle()
@@ -50,7 +49,7 @@ class MainFragment : Fragment() {
                 val fragment2 = DiceFragment()
                 fragment2.arguments = bundle
                 val backStateName = fragment2.javaClass.name
-                fragmentManager?.beginTransaction()?.replace(R.id.ftSecondTaskContainer, fragment2)?.addToBackStack(backStateName)?.commit()
+                fragmentManager?.beginTransaction()?.add(R.id.ftSecondTaskContainer, fragment2)?.addToBackStack(backStateName)?.commit()
             }
         }
         rvGames.adapter = adapter

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.example.fragmenthomeworks.Fragments.AddUserFragment
+import com.example.fragmenthomeworks.Fragments.MainFragment
 import com.example.fragmenthomeworks.R
 
 class SecondTask : AppCompatActivity() {
@@ -17,6 +18,17 @@ class SecondTask : AppCompatActivity() {
         btnClos.setOnClickListener {
             finish()
         }
+
+
+        val btnMenuGame = findViewById<Button>(R.id.btnMenuGame)
+        val backStateNmae = MainFragment().javaClass.name
+            btnMenuGame.setOnClickListener {
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.ftSecondTaskContainer, MainFragment())
+                    .addToBackStack(backStateNmae)
+                    .commit()
+            }
 
 
 
