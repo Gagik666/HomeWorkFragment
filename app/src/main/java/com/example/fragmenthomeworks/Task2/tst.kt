@@ -17,7 +17,9 @@ class tst : AppCompatActivity() {
 
         val rvtst =  findViewById<RecyclerView>(R.id.rvtst)
         rvtst.layoutManager = LinearLayoutManager(this )
-        adapter = GamesAdapter(GamelLists.userList, GamelLists.gameList)
+        adapter = GamesAdapter(GamelLists.userList, GamelLists.gameList) {
+
+        }
         rvtst.adapter = adapter
 
     }

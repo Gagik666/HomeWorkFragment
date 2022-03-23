@@ -12,4 +12,13 @@ object GamelLists {
         GameModel( "Dice", R.drawable.dice)
     )
 
+    val imgDiceList = listOf(
+        R.drawable.dice1,
+        R.drawable.dice2,
+        R.drawable.dice3,
+        R.drawable.dice4,
+        R.drawable.dice5,
+        R.drawable.dice6
+    )
+
 }

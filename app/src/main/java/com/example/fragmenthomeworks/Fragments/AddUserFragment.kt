@@ -1,4 +1,4 @@
-package com.example.fragmenthomeworks.Task2
+package com.example.fragmenthomeworks.Fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import com.example.fragmenthomeworks.R
-import kotlin.concurrent.fixedRateTimer
 
 
 class AddUserFragment : Fragment() {

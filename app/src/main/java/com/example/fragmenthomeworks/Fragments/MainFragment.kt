@@ -1,4 +1,4 @@
-package com.example.fragmenthomeworks.Task2
+package com.example.fragmenthomeworks.Fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fragmenthomeworks.R
 import com.example.fragmenthomeworks.Task2.Adapter.GamesAdapter
+import com.example.fragmenthomeworks.Task2.GamelLists
 import com.example.fragmenthomeworks.Task2.Model.UserModel
 
 class MainFragment : Fragment() {
@@ -32,7 +33,26 @@ class MainFragment : Fragment() {
         GamelLists.userList.add(UserModel(player1, player2, result21, result22))
 
         rvGames.layoutManager = LinearLayoutManager(this.context)
-        adapter = GamesAdapter(GamelLists.userList, GamelLists.gameList)
+        adapter = GamesAdapter(GamelLists.userList, GamelLists.gameList) {
+            if (it == 0) {
+                val bundle = Bundle()
+                bundle.putString("Name1", player1)
+                bundle.putString("Name2", player2)
+                val fragment1 = TicTacToeFragment()
+                fragment1.arguments = bundle
+                val backStateNmae = fragment1.javaClass.name
+                fragmentManager?.beginTransaction()?.replace(R.id.ftSecondTaskContainer, fragment1 )?.addToBackStack(backStateNmae)?.commit()
+            }
+            if (it == 1) {
+                val bundle = Bundle()
+                bundle.putString("Name1", player1)
+                bundle.putString("Name2", player2)
+                val fragment2 = DiceFragment()
+                fragment2.arguments = bundle
+                val backStateName = fragment2.javaClass.name
+                fragmentManager?.beginTransaction()?.replace(R.id.ftSecondTaskContainer, fragment2)?.addToBackStack(backStateName)?.commit()
+            }
+        }
         rvGames.adapter = adapter
         return viev
     }
